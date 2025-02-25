@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sliding Color Panel</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 <body class="bg-gray-100 min-h-screen relative overflow-x-hidden" x-data="colorPicker">
     <div x-data="colorPicker()">
@@ -21,6 +24,7 @@
     
         <!-- Sliding Panel -->
         <div 
+            x-cloak
             class="fixed top-0 right-0 w-80 bg-white shadow-lg transform transition-transform duration-300 ease-in-out"
             :class="isPanelOpen ? 'translate-x-0' : 'translate-x-full'"
         >
