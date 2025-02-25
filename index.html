@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sliding Color Panel</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        [x-cloak] { display: none !important; }
-    </style>
 </head>
-<body class="bg-gray-100 min-h-screen relative overflow-x-hidden" x-data="colorPicker">
+
+<body class="bg-gray-100 min-h-screen relative overflow-x-hidden">
     <div x-data="colorPicker()">
         <!-- Settings Icon Button -->
         <button 
@@ -42,13 +39,13 @@
                 <div class="grid grid-cols-4 gap-4 mb-8" id="primary-colors">
                     <template x-for="color in primaryColors">
                         <div class="color-box h-12 rounded-lg cursor-pointer relative" :class="`bg-${color}`" @click="selectPrimary(color)">
-                            <div class="absolute inset-0 flex items-center justify-center" x-show="selectedPrimary === color">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
+                          <div class="absolute inset-0 flex items-center justify-center" x-show="selectedPrimary === color">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                          </div>
                         </div>
-                    </template>
+                    </template>                      
                 </div>
     
                 <h3 class="text-lg font-semibold mb-4">Secondary color</h3>
@@ -65,9 +62,8 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>  
 
     <script type="module" src="src/main.js"></script>
-
 </body>
 </html>
