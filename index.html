@@ -6,7 +6,32 @@
     <title>Sliding Color Panel</title>
 </head>
 
-<body class="bg-gray-100 min-h-screen relative overflow-x-hidden">
+<body class="bg-gray-100 min-h-screen relative overflow-x-hidden" x-data="colorPicker()" @primary-color-changed.window="selectedPrimary = $event.detail" @secondary-color-changed.window="selectedSecondary = $event.detail">
+    
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header :class="`bg-${selectedPrimary} shadow-md`">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-800">Color Panel</div>
+                <nav class="space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-gray-800">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800">About</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section :class="`bg-${selectedSecondary} py-20`">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome to the Sliding Color Panel</h1>
+                <p class="text-gray-600 mb-8">Easily customize your color settings with our intuitive panel.</p>
+                <button :class="`bg-${selectedPrimary} text-white px-6 py-3 rounded-full shadow-lg hover:bg-${selectedPrimary}-dark transition-colors duration-200`">Get Started</button>
+            </div>
+        </section>
+    </div>
+
+
     <div x-data="colorPicker()">
         <!-- Settings Icon Button -->
         <button 
@@ -62,7 +87,7 @@
                 </div>
             </div>
         </div>
-    </div>  
+    </div> 
 
     <script type="module" src="src/main.js"></script>
 </body>

@@ -1,10 +1,10 @@
 export default function ColorPickerPlugin(Alpine) {
     Alpine.data('colorPicker', (config = {}) => ({
         isPanelOpen: false,
-        selectedPrimary: config.initialPrimary || 'purple-600',
-        selectedSecondary: config.initialSecondary || null,
+        selectedPrimary: config.initialPrimary || 'teal-600',
+        selectedSecondary: config.initialSecondary || 'teal-400',
         primaryColors: config.primaryColors || [
-            'purple-600', 'orange-500', 'pink-500', 'blue-600',
+            'teal-600', 'orange-500', 'pink-500', 'blue-600',
             'teal-400', 'green-400', 'lime-400', 'yellow-400',
             'orange-600', 'black', 'green-600', 'gray-600'
         ],

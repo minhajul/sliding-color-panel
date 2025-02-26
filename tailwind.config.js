@@ -5,7 +5,7 @@ module.exports = {
       extend: {},
     },
     safelist: [
-        "bg-purple-600",
+        "bg-teal-600",
         "bg-orange-500",
         "bg-orange-600",
         "bg-pink-500",
