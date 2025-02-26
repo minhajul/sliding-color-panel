@@ -3,6 +3,7 @@ This is a simple sliding color panel that changes color when you click on it.
 
 ### Installation
 1. Copy ```alpine-color-picker.js``` in your project
+
 2. Update your main js file like below:
    ```bash
     import Alpine from 'alpinejs';
@@ -11,6 +12,7 @@ This is a simple sliding color panel that changes color when you click on it.
     Alpine.plugin(ColorPickerPlugin);
     Alpine.start();
    ```
+
 3. Update your body tag with the below code
 
 ```
