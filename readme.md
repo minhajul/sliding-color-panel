@@ -11,6 +11,12 @@ This is a simple sliding color panel that changes color when you click on it.
     Alpine.plugin(ColorPickerPlugin);
     Alpine.start();
    ```
+3. Update your body tag with the below code
+
+```
+x-data="colorPicker()" @primary-color-changed.window="selectedPrimary = $event.detail" @secondary-color-changed.window="selectedSecondary = $event.detail"
+```
+
 4. Open the index.html file and add below code inside the ```body``` tag
    ```bash
    <div x-data="colorPicker()">
@@ -45,13 +51,13 @@ This is a simple sliding color panel that changes color when you click on it.
                 <div class="grid grid-cols-4 gap-4 mb-8" id="primary-colors">
                     <template x-for="color in primaryColors">
                         <div class="color-box h-12 rounded-lg cursor-pointer relative" :class="`bg-${color}`" @click="selectPrimary(color)">
-                            <div class="absolute inset-0 flex items-center justify-center" x-show="selectedPrimary === color">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
+                          <div class="absolute inset-0 flex items-center justify-center" x-show="selectedPrimary === color">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                          </div>
                         </div>
-                    </template>
+                    </template>                      
                 </div>
     
                 <h3 class="text-lg font-semibold mb-4">Secondary color</h3>
@@ -68,5 +74,37 @@ This is a simple sliding color panel that changes color when you click on it.
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
    ```
+
+5. We are using Tailwind V4, which utilizes ```JIT (Just-In-Time)``` mode. To use conditional classes or custom colors, update the ```tailwind.config.js``` file with your preferred color codes, as shown below. Additionally, if you want to modify the default color codes, you'll need to update them in ```alpine-color-picker.js``` as well.
+
+```
+ safelist: [
+      'bg-teal-200',
+      'bg-orange-200',
+      'bg-pink-200',
+      'bg-blue-200',
+      'bg-cyan-200',
+      'bg-green-200', 
+      'bg-lime-200', 
+      'bg-yellow-200',
+      'bg-orange-200', 
+      'bg-black', 
+      'bg-green-200', 
+      'bg-gray-200',
+      // secondary colors
+      'bg-red-300', 
+      'bg-orange-300', 
+      'bg-yellow-300', 
+      'bg-lime-300',
+      'bg-green-300', 
+      'bg-blue-300', 
+      'bg-indigo-300', 
+      'bg-purple-300',
+      'bg-purple-300',
+      'bg-pink-300', 
+      'bg-gray-300',
+      'bg-gray-900'
+]
+```
