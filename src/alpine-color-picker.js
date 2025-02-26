@@ -1,5 +1,10 @@
 export default function ColorPickerPlugin(Alpine) {
     Alpine.data('colorPicker', (config = {}) => ({
+        init() {
+            // Load saved colors from localStorage
+            this.selectedPrimary = localStorage.getItem('selectedPrimary') || config.initialPrimary || 'cyan-200';
+            this.selectedSecondary = localStorage.getItem('selectedSecondary') || config.initialSecondary || 'indigo-300';
+        },
         isPanelOpen: false,
         selectedPrimary: config.initialPrimary || 'cyan-200',
         selectedSecondary: config.initialSecondary || 'indigo-300',
@@ -39,10 +44,12 @@ export default function ColorPickerPlugin(Alpine) {
         },
         selectPrimary(color) {
             this.selectedPrimary = color;
+            localStorage.setItem('selectedPrimary', color);
             this.$dispatch('primary-color-changed', color);
         },
         selectSecondary(color) {
             this.selectedSecondary = color;
+            localStorage.setItem('selectedSecondary', color);
             this.$dispatch('secondary-color-changed', color);
         }
     }));
