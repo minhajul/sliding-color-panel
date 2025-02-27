@@ -83,7 +83,7 @@ x-data="colorPicker()" @primary-color-changed.window="selectedPrimary = $event.d
 
 ```
  safelist: [
-     'bg-teal-200',
+      'bg-teal-200',
       'bg-orange-200',
       'bg-pink-200',
       'bg-blue-200',
@@ -93,7 +93,7 @@ x-data="colorPicker()" @primary-color-changed.window="selectedPrimary = $event.d
       'bg-yellow-200',
       'bg-emerald-200', 
       'bg-black', 
-      'bg-green-200', 
+      'bg-sky-200', 
       'bg-gray-200',
       // secondary colors
       'bg-red-300', 

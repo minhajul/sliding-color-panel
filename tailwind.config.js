@@ -15,7 +15,7 @@ module.exports = {
       'bg-yellow-200',
       'bg-emerald-200', 
       'bg-black', 
-      'bg-green-200', 
+      'bg-sky-200', 
       'bg-gray-200',
       // secondary colors
       'bg-red-300', 
