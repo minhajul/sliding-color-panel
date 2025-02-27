@@ -17,7 +17,7 @@ export default function ColorPickerPlugin(Alpine) {
             'green-200', 
             'lime-200', 
             'yellow-200',
-            'orange-200', 
+            'emerald-200', 
             'black', 
             'green-200', 
             'gray-200'

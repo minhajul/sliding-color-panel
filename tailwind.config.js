@@ -13,7 +13,7 @@ module.exports = {
       'bg-green-200', 
       'bg-lime-200', 
       'bg-yellow-200',
-      'bg-orange-200', 
+      'bg-emerald-200', 
       'bg-black', 
       'bg-green-200', 
       'bg-gray-200',
@@ -26,7 +26,7 @@ module.exports = {
       'bg-blue-300', 
       'bg-indigo-300', 
       'bg-purple-300',
-      'bg-purple-300',
+      'bg-cyan-300',
       'bg-pink-300', 
       'bg-gray-300',
       'bg-gray-900'
