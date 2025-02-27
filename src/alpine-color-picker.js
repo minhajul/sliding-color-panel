@@ -19,7 +19,7 @@ export default function ColorPickerPlugin(Alpine) {
             'yellow-200',
             'emerald-200', 
             'black', 
-            'green-200', 
+            'sky-200', 
             'gray-200'
         ],
         secondaryColors: config.secondaryColors || [
